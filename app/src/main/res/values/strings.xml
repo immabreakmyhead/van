@@ -1,0 +1,12 @@
+<resources>
+        <string name="app_name">van</string>
+        <string name="van_Gogh_Gallery">Van Gogh Gallery</string>
+        <string name="nuenen">Nuenen-Antwerp</string>
+        <string name="oise">Auvers-sur-Oise</string>
+        <string name="paris">Paris</string>
+        <string name="star">Starry Night</string>
+        <string name="image">Van Gogh Image</string>
+        <string name="title">Van Gogh Gallery</string>
+
+
+    </resources>
