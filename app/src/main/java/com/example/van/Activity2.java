@@ -22,12 +22,9 @@ public class Activity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         SharedPreferences sharedPreferences = getSharedPreferences("gallery", MODE_PRIVATE);
-        String retrievedText = sharedPreferences.getString("key_multiline_text", "Vincent spent the final, highly productive months of his life in Auvers-sur-Oise, where he committed suicide. "); // Default to empty string if not found
-
+        String retrievedText = sharedPreferences.getString("key2", "second description ");
         t2 = findViewById(R.id.editTextTextMultiLine2);
         t2.setText(retrievedText);
-
     }
 }

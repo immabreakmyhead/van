@@ -24,11 +24,8 @@ public class Activity3 extends AppCompatActivity{
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         SharedPreferences sharedPreferences = getSharedPreferences("gallery", MODE_PRIVATE);
-        String retrievedText = sharedPreferences.getString("key_multiline_text", "Bridges across the Seine at Asnières was painted in open air. The light yellow of the embankment and the bridge walls shows the effect of bright sunlight. "); // Default to empty string if not found
-
-
+        String retrievedText = sharedPreferences.getString("key3", "third description ");
         t2 = findViewById(R.id.editTextTextMultiLine3);
         t2.setText(retrievedText);
     }
