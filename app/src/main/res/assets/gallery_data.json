@@ -1,0 +1,24 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "text": "Van Gogh hoped that a large work featuring several people would help prove himself to the outside world. Paintings of peasants having their daily meal were popular at that time. He practiced for months painting heads, and many studies preceded the Potato Eaters. He was satisfied with the result but his brother Theo and his artist friend Anthon van Rappard were very critical of his work.",
+      "image": "nuen"
+    },
+    {
+      "id": 2,
+      "text": "Vincent spent the final, highly productive months of his life in Auvers-sur-Oise, where he committed suicide.",
+      "image": "oise"
+    },
+    {
+      "id": 3,
+      "text": "Bridges across the Seine at Asnières was painted in open air. The light yellow of the embankment and the bridge walls shows the effect of bright sunlight.",
+      "image": "paris"
+    },
+    {
+      "id": 4,
+      "text": "Van Gogh's rolling night sky full of bright stars is probably one of the world's most famous artworks.",
+      "image": "star"
+    }
+  ]
+}

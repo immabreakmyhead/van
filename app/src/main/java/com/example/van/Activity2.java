@@ -1,30 +1,61 @@
 package com.example.van;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.widget.Button;
 import android.widget.EditText;
-import androidx.activity.EdgeToEdge;
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import java.util.Locale;
 
 public class Activity2 extends AppCompatActivity {
 
     EditText t2;
+    ImageView imageView;
+    DatabaseHelper databaseHelper;
+    TextToSpeech textToSpeech;
+    Button txt2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_activity2);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activity2), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        SharedPreferences sharedPreferences = getSharedPreferences("gallery", MODE_PRIVATE);
-        String retrievedText = sharedPreferences.getString("key2", "second description ");
+
+        databaseHelper = new DatabaseHelper(this);
+
+        String[] retrievedData = databaseHelper.getTextAndImageName(3);
+        String retrievedText = retrievedData[0];
+        String retrievedImageName = retrievedData[1];
+
         t2 = findViewById(R.id.editTextTextMultiLine2);
+        imageView = findViewById(R.id.imageView2);
+        txt2 = findViewById(R.id.txt2);
+
         t2.setText(retrievedText);
+
+        int imageResId = getResources().getIdentifier(retrievedImageName, "drawable", getPackageName());
+        if (imageResId != 0) {
+            imageView.setImageResource(imageResId);
+        }
+
+        textToSpeech = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                textToSpeech.setLanguage(Locale.getDefault());
+            }
+        });
+
+        txt2.setOnClickListener(v -> {
+            String textToRead = t2.getText().toString();
+            textToSpeech.speak(textToRead, TextToSpeech.QUEUE_FLUSH, null, null);
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onDestroy();
     }
 }

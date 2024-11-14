@@ -11,11 +11,9 @@
         android:layout_width="253dp"
         android:layout_height="169dp"
         android:layout_marginTop="84dp"
-        android:contentDescription="@string/oise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/oise" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -31,14 +29,24 @@
         android:id="@+id/editTextTextMultiLine2"
         android:layout_width="297dp"
         android:layout_height="272dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="268dp"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="564dp"
+        android:text="@string/speech"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
